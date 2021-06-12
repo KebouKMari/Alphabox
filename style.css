@@ -1,4 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300');
 
 *{
     margin: 0px;
@@ -8,13 +11,12 @@
 body{
     font-family: 'Exo', sans-serif;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
 
 
-.container {
+.context {
     width: 100%;
     position: absolute;
     top:50vh;
@@ -24,17 +26,17 @@ body{
 .context h1{
     text-align: center;
     color: #fff;
-    font-size: 50px;
+    font-size: 40px;
+    margin-top: -150px;
 }
 
 
 .area{
-    background: #4e54c8;  
+    /*background: #4e54c8; */ 
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
     width: 100%;
-    height:0.5vh;
-    
-   
+    height:100vh;
+    position: relative;
 }
 
 .circles{
@@ -46,7 +48,8 @@ body{
     overflow: hidden;
 }
 
-.circles li{
+.circles li
+{
     position: absolute;
     display: block;
     list-style: none;
@@ -55,17 +58,15 @@ body{
     background: rgba(255, 255, 255, 0.2);
     animation: animate 25s linear infinite;
     bottom: -150px;
-    
+    text-align: center;
+    font-size: 70px;
 }
-
 .circles li:nth-child(1){
     left: 25%;
     width: 80px;
     height: 80px;
     animation-delay: 0s;
 }
-
-
 .circles li:nth-child(2){
     left: 10%;
     width: 20px;
@@ -73,14 +74,12 @@ body{
     animation-delay: 2s;
     animation-duration: 12s;
 }
-
 .circles li:nth-child(3){
     left: 70%;
     width: 20px;
     height: 20px;
     animation-delay: 4s;
 }
-
 .circles li:nth-child(4){
     left: 40%;
     width: 60px;
@@ -88,7 +87,6 @@ body{
     animation-delay: 0s;
     animation-duration: 18s;
 }
-
 .circles li:nth-child(5){
     left: 65%;
     width: 20px;
@@ -134,7 +132,7 @@ body{
     animation-duration: 11s;
 }
 
-/*Animations des cercles*/
+
 
 @keyframes animate {
 
@@ -150,20 +148,264 @@ body{
         border-radius: 50%;
     }
 
+    
+
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
-.logo ul li img{
-   
+/*mise en forme du header*/
+.menu ul{
+    display: inline-flex;
+    margin: 50px;
 }
+.logo img{
+    width: 200px;
+    margin-top: -7px;
+    margin-right: 48px;
+    margin-left: -40px;
+    margin-top: -50px;
+}
+
+/*select liste*/
+  .optin-container {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 30rem;
+    margin-left: 350px;
+  }
+  
+  .cta {
+    background: #E52B50;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 1.75rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    z-index: 100;
+    height: -30px;
+    
+  }
+  @media screen and (max-width: 600px) {
+    .cta {
+      line-height: 1.4;
+      padding: 1.25rem 1rem;
+    }
+  }
+  
+  form {
+    background: #0c0c0c;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 1rem;
+    margin: 0;
+    width: 480px;
+  }
+  form input {
+    padding: 0.75rem;
+    margin: 0;
+  }
+  form input[type=email] {
+    border: none;
+    font-size: 1rem;
+    flex: 1;
+    outline: #E52B50;
+  }
+  form input[type=email]:focus {
+    outline: 0.25rem solid #E52B50;
+  }
+  form input[type=submit] {
+    background: linear-gradient(#e84263, #e52b50);
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    margin: 0 0 0 1rem;
+    padding: 0 3rem;
+    transition: all 0.25s ease-in-out;
+  }
+  form input[type=submit]:hover {
+    background: linear-gradient(#e84667, #e63054);
+  }
+  @media screen and (max-width: 600px) {
+    form {
+      flex-flow: row wrap;
+    }
+    form input {
+      padding: 1rem !important;
+      margin: 0 !important;
+      flex: 100%;
+    }
+    form input[type=submit] {
+      margin-top: 1rem !important;
+    }
+  }
+  .hidden {
+    display: none;
+    width: 700px;
+    margin-left: -100px;
+    height: 100px;
+    margin-top: 20px;
+  }
+/*bouton select cta*/
+form ul{
+  
+    display: inline-flex;
+    margin: 50px;
+    margin-top: -2px;
+    text-align: center;
+}
+.form li{
+    list-style: none;
+    margin: 10px 20px 20px 10px;
+    color: #fff;
+    cursor: pointer;
+    height: 5px;
+    
+}
+/*css de la deuxieme page*/
+.container {
+  width: 1500px;
+  border: 5px solid rgb(111,41,97);
+  border-radius: .5em;
+  padding: 10px;
+  height: 450px;
+  color: #0c0c0c;
+}
+
+.item { 
+  width: 360px;
+  padding: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 400px;
+  
+}
+.item img{
+  margin-right: -70x ;
+  height: 380px;
+
+}
+
+.texte_centrer {
+  position: absolute;
+  margin-top: -70px;
+  margin-left: 50px;
+  width: 300px;
+ 
+}
+.contexte {
+  width: 100%;
+  position: absolute;
+  top:50vh;
+  
+}
+
+.contexte h1{
+  text-align: center;
+  color: #fff;
+  font-size: 40px;
+  margin-top: -200px;
+}
+
+/*bouton du module apprendre un nouveau mot*/
+
+.btn{
+  display: flex;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  color: black;
+  /*background: #070707;*/
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  width: 340px;
+  margin-left: -50px;
+}
+
+.btn:focus {
+ outline: none; 
+}
+
+.btn:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #050505;
+}
+
+.btn span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.btn:hover  span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+span {
+  transform: skewX(15deg) 
+  
+}
+
+span:nth-child(2) {
+  width: 10px;
+  margin-left: -20px;
+  position: relative;
+  top: 12%;
+}
+
+/**************SVG****************/
+
+path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.btn:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.btn:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.btn:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+  0% {
+      fill: rgb(2, 2, 2);
+  }
+  50% {
+      fill: #080808;
+  }
+  100% {
+      fill: rgb(14, 13, 13);
+  }
+}
+
