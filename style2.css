@@ -24,13 +24,12 @@ body{
     
 }
 
-.context h1{
+.content h1{
     text-align: center;
     color: #fff;
     font-size: 40px;
     margin-top: -150px;
-    font-weight: bolder;
-   
+    font-weight: bolder;   
 
 }
 
@@ -229,9 +228,9 @@ body{
   filter: blur(50px);
 }
   /*fin*/
-  .cta {
-    background: #E52B50;
-    color: white;
+  .cta1{
+    background: #f8f3f3;
+    color: rgb(5, 5, 5);
     cursor: pointer;
     display: block;
     font-size: 2rem;
@@ -241,67 +240,110 @@ body{
     text-decoration: none;
     width: 100%;
     z-index: 100;
-    height: -30px;
+   
     margin-top: 50px;
+    box-shadow: 10px 5px 5px 5px rgb(19, 18, 18);
+    border-radius: 0px;
+    animation-name: cta1;
+    animation-duration: 4s;  
   }
+  @keyframes cta1 {
+    10%  {height:80px; width:200px;}
+}
 
-
-  @media screen and (max-width: 600px) {
-    .cta {
-      line-height: 1.4;
-      padding: 1.25rem 1rem;
-    }
-  }
+.form1{
+  background: black;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1rem;
+  margin: 0;
+  width: 480px;
+}
+.configuration{
+  background: black;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1rem;
+  margin: 0;
+  width: 900px;
+  margin-left: 150px;
+  margin-top: 50px;
+}
+.hide {
+  display: none;
+  width: 700px;
+  margin-left: 310px;
+  height: 100px; 
+  margin-top: 20px;
+}
+#lettre ul{
   
-  form{
-    background: black;
-    display: flex;
-    flex-flow: row nowrap;
-    padding: 1rem;
-    margin: 0;
-    width: 480px;
+  display: inline-flex;
+  margin: 50px;
+  margin-top: -2px;
+  text-align: center;
+}
+#lettre ul li{
+  list-style: none;
+  margin: 10px 20px 20px 10px;
+  color: #fff;
+  cursor: pointer;
+  height: 5px;
+  margin-left:30px;
+  margin-right:30px;
+  
+}
+.btn2{
 
-
-  }
+  transform: skewX(-15deg);
+  width: 200px;
+  margin-left: -90px;
+  margin-top: 10px;
+  font-size: 20px;
+  color:whitesmoke ;
+  height: 50px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da,#19d7f8);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+  /* The Modal (background) */
+ .modal {
+    position: absolute;
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 100; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ }
  
-  @media screen and (max-width: 600px) {
-    form {
-      flex-flow: row wrap;
-    }
-    form input {
-      padding: 1rem !important;
-      margin: 0 !important;
-      flex: 100%;
-    }
-    form input[type=submit] {
-      margin-top: 1rem !important;
-    }
-  }
-  .hidden {
-    display: none;
-    width: 700px;
-    margin-left: 310px;
-    height: 100px; 
-    margin-top: 20px;
-  }
-/*bouton select cta*/
-form ul{
+ /* Modal Content/Box */
+ .modal-content {
+   background-color: #fefefe;
+   margin: 15% auto; /* 15% from the top and centered */
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%; /* Could be more or less, depending on screen size */
+ }
+ .modal-body{
+     height: 300px;
+     margin-top: 20px;
+ }
+ .modal-header{
+     margin-top: -25px;
+ }
+ .modal-footer{
+     margin-top: 55px;
+     height: 10px;
+ }
+ 
   
-    display: inline-flex;
-    margin: 50px;
-    margin-top: -2px;
-    text-align: center;
-}
-.form li{
-    list-style: none;
-    margin: 10px 20px 20px 10px;
-    color: #fff;
-    cursor: pointer;
-    height: 5px;
-    margin-left:30px;
-    margin-right:30px;
-    
-}
 /*css de la deuxieme page*/
 .container1 {
   width: 1360px;
@@ -313,6 +355,53 @@ form ul{
   display: flex;
   justify-content: space-between;
   margin-left: -70px;  
+}
+.itemDiv1{
+    height: 300px;
+    width: 330px;
+    
+    margin-top: -30px;
+    margin-left: -70px;
+}
+.itemDiv2{
+    height: 300px;
+    width: 330px;
+    box-shadow: 10px 5px 5px rgb(206, 171, 171);
+    border-radius: 0px;
+    animation-name: itemDiv2;
+    animation-duration: 4s;  
+    margin-top: 30px;
+    margin-left: 50px;
+    background: #f8f3f3;
+    color: rgb(5, 5, 5);
+    box-shadow: 10px 5px 5px 5px rgb(19, 18, 18);
+    border-radius: 0px;
+    animation-name: itemDiv2;
+    animation-duration: 4s;  
+  }
+  @keyframes itemDiv2 {
+    10%  {height:80px; width:200px;}
+}
+
+
+.itemDiv3{
+    height: 300px;
+    width: 330px;
+    box-shadow: 10px 5px 5px rgb(206, 171, 171);
+    border-radius: 0px;
+    animation-name: itemDiv3;
+    animation-duration: 4s;  
+    margin-top: 30px;
+    margin-left: 50px;
+    background: #f8f3f3;
+    color: rgb(5, 5, 5);
+    box-shadow: 10px 5px 5px 5px rgb(19, 18, 18);
+    border-radius: 0px;
+    animation-name: itemDiv3;
+    animation-duration: 4s;  
+  }
+  @keyframes itemDiv3 {
+    10%  {height:80px; width:200px;}
 }
 
 .item { 
@@ -343,7 +432,8 @@ form ul{
   width: 100%;
   position: absolute;
   top:50vh;
-  
+  margin-top: -40px;
+  margin-right: -50px;
 }
 
 .contexte h1{
@@ -351,6 +441,7 @@ form ul{
   color: #fff;
   font-size: 40px;
   margin-top: -160px;
+  margin-right: 60px;
 }
 
 /*bouton du module apprendre un nouveau mot*/

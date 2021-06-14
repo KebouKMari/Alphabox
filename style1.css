@@ -20,18 +20,16 @@ body{
 .context {
     width: 100%;
     position: absolute;
-    top:50vh;
-    
+   
 }
 
-.context h1{
+.content h1{
     text-align: center;
     color: #fff;
     font-size: 40px;
-    margin-top: -150px;
+    margin-top: -200px;
     font-weight: bolder;
-   
-
+    text-decoration: blink;
 }
 
 
@@ -254,13 +252,12 @@ body{
   }
   
   form{
-    background: black;
     display: flex;
     flex-flow: row nowrap;
     padding: 1rem;
-    margin: 0;
+    margin: -30px;
     width: 480px;
-
+    height: 350px;
 
   }
  
@@ -350,7 +347,10 @@ form ul{
   text-align: center;
   color: #fff;
   font-size: 40px;
-  margin-top: -160px;
+  margin-top: -180px;
+  top:50vh;
+  margin-left: 150px;
+  
 }
 
 /*bouton du module apprendre un nouveau mot*/
@@ -375,6 +375,7 @@ body {
   transform: skewX(-15deg);
   width: 340px;
   margin-left: -50px;
+  margin-top: 10px;
   font-size: 20px;
   color:whitesmoke ;
   height: 50px;
@@ -384,6 +385,22 @@ body {
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
+
+.btn2{
+
+    transform: skewX(-15deg);
+    width: 200px;
+    margin-left: -90px;
+    margin-top: 10px;
+    font-size: 20px;
+    color:whitesmoke ;
+    height: 50px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da,#19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
 
 /**/
 
@@ -410,7 +427,17 @@ body {
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
-
+.modal-body{
+    height: 300px;
+    margin-top: 20px;
+}
+.modal-header{
+    margin-top: -25px;
+}
+.modal-footer{
+    margin-top: 55px;
+    height: 10px;
+}
 /* The Close Button */
 .close {
   color: #aaa;

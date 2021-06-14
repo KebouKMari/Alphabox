@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alphabox</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style2.css">
+	<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
+
+	
+
+</head>
+	<body>
+		
+		<div class="area" >
+				<ul class="circles">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>	
+					<div class="menu" >
+						<ul>
+            				<li class="logo"><img src="images/logoCopie.jpg"/></li>
+							
+						</ul>
+					</div>
+
+										 		
+					<div class="container">
+						<div class="configuration">
+							<form action="#" class="config">
+								<label for="confi" style=" color:white">LANGUE</label>
+									<input type="textField" id="langue">
+								<label for="selection "style=" color:white">Timeur</label>
+									<input type="range" id="timeur" min="10" max="160" value="20"></input>
+								<label for="confi " style=" color:white">Mode</label>
+									<input type="textField" id="gameMode">
+							</form>
+						</div>
+		  
+			<div class="justify-content-around" style="display: flex;">
+				<div class="itemDiv1"> 
+
+					<button class="cta1">selectionne une lettre</button>
+					
+				</div> 
+					<div id="lettre" class="form1 form2 hide">
+							<ul>
+								<li><button type="submit">A</button></li>
+								<li ><button type="submit">B</button></li>
+								<li><button type="submit">C</button></li>
+								<li><button type="submit">D</button></li>
+								<li><button type="submit">E</button></li>
+								<li><button type="submit">F</button></li>
+								<li><button type="submit">G</button></li>
+								<li><button type="submit">H</button></li>
+								<li><button type="submit">I</button></li>
+								<li><button type="submit">J</button></li>
+								<li><button type="submit">K</button></li>
+								<li><button type="submit">L</button></li>
+								<li><button type="submit">M</button></li>
+								<li><button type="submit">N</button></li>
+								<li><button type="submit">O</button></li>
+								<li><button type="submit">P</button></li>
+								<li><button type="submit">Q</button></li>
+								<li><button type="submit">R</button></li>
+							</ul>
+
+				</div>  
+			    
+				<div class="itemDiv2">
+
+
+				 </div>
+				   
+			   
+				<div class="itemDiv3"> </div>
+				   
+		    </div>
+		<!-- Modal -->
+		<div id="myModal1" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			<h4 class="modal-title">APPRENDRE LES MOTS</h4>
+			<div class="modal-header">
+				
+			</div>
+			<div class="modal-body">
+				<form id="modalConfig" class="form-myModal1">
+				<fieldset>
+					<legend></legend>
+					<div class="form-group">
+						<label for="selection">Langue</label>
+						<select id="selection" class="form-control">
+							<option value="">Liste de choix...</option>
+							<option value="">Francais</option>
+							<option value="">Anglais</option>
+							<option value="">Allemand</option>
+							<option value="">Espanol</option>
+						</select>
+					</div>	
+					
+					<div class="form-group">
+						<label for="selection">Type de jeu</label>
+						<select id="gameType" class="form-control">
+							<option value="">Type de jeu...</option>
+							
+							<option value="">Prononciation</option>
+							<option value="">Ecriture</option>
+							<option value="">Lecture</option>
+						</select>
+					</div>	
+					
+					<div class="form-group">
+						<label for="selection">Mode</label>
+						<select id="mode" class="form-control">
+							<option value="">Mode de jeu...</option>
+							
+							<option value="">Mono joueur</option>
+							<option value="">Multi-joueurs</option>
+							
+						</select>
+					</div>
+						<div class="form-group">
+						<label for="selection">Timeur</label>
+						<input type="range" id="gameTimeur" min="10" max="160" value="20"></input>
+					</div>	
+				</fieldset>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn2 btn-default" data-dismiss="modal">Close</button>
+				<button type="submit"  id="submitForm" class="btn2 p-2 text-center  btn-default">Jouer</button>
+			</div>
+			</div>
+
+		</div>
+		</div>
+						
+			<div class="content contexte">
+				<h1 class="display-5">
+					APPRENDRE DE NOUVEAUX MOTS!<i class="em em-blush" aria-role="presentation" aria-label="SMILING FACE WITH SMILING EYES">
+			</div>
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+				
+			<script type="text/javascript" src="main.js"></script>		
+			<script>
+				$(window).on('load', function(){
+					$('#myModal1').modal('show');
+				});
+					$('#selection').html($('#langue').val());
+					$('#mode').html($('#gameMode').val());
+					$('#gameTimeur').html($('#timeur').val());
+						
+						$('#submitForm').click(function(){
+						$('#modalConfig').submit();
+						$('#myModal1').modal('hide');
+					});
+			</script>	
+			
+	</body>
+		
+</html>

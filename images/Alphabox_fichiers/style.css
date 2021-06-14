@@ -253,7 +253,7 @@ body{
     }
   }
   
-  form{
+  form {
     background: black;
     display: flex;
     flex-flow: row nowrap;
@@ -303,27 +303,22 @@ form ul{
     
 }
 /*css de la deuxieme page*/
-.container1 {
-  width: 1360px;
+.container {
+  width: 1500px;
   border: 5px solid rgb(111,41,97);
   border-radius: .5em;
-  padding: 1px;
-  height: 460px;
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  margin-left: -70px;  
+  padding: 10px;
+  height: 500px;
+  margin-top: 70px;
 }
 
 .item { 
-  width: 30px;
-  padding: 10px;
+  width: 360px;
+  padding: 15px;
   display: inline-block;
   vertical-align: middle;
   height: 400px;
-  margin-left: 62px;
-  margin-right: 348px;
-
+  
 }
 .item img{
   margin-right: -70x ;
@@ -350,7 +345,7 @@ form ul{
   text-align: center;
   color: #fff;
   font-size: 40px;
-  margin-top: -160px;
+  margin-top: -200px;
 }
 
 /*bouton du module apprendre un nouveau mot*/
