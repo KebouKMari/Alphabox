@@ -5,22 +5,30 @@
     {% load static %}
     <title>Alphabox</title>
     <meta charset="utf-8">
+
     <link rel="stylesheet" type="text/css" href="{% static 'learnword/style_test.css' %}">
-    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integr>
-
-
 </head>
 
 <body>
+    <div class="logo">
+        <img src="{% static 'learnword/images/logoCopie.jpg' %}" />
+    </div>
+    <div id="timer-select">
+        <label for="timer">Timer</label>
+        <select name="timer" id="timer-value">
+            <option value="10">10s</option>
+            <option value="20">20s</option>
+            <option value="30">30s</option>
+            <option value="45">45s</option>
+            <option value="60">1min</option>
+            <option value="90">1min30</option>
+            <option value="120">2min</option>
+        </select><br />
+    </div>
 
-    <div class="area">
-        <div class="menu">
-            <ul>
-                <li class="logo"><img src="{% static 'learnword/images/logoCopie.jpg' %}" /></li>
-            </ul>
-        </div>
+    <div id="progress_timer">
+        <progress id="rest-timer" max="100" value="70"> 70% </progress>
+        <p id="decompt"></p>
     </div>
 
     <div class="context">
@@ -31,9 +39,9 @@
                 onclick="set_letter('{{ letter }}')">
             {% endfor %}
         </div>
-        <div id="bloc_mot" style="background-color='white',">
+        <div id="bloc_mot">
+            <h2>Mot</h2>
             <form action="" method="POST" id="formmot"> {% csrf_token %}
-                <label for="mot">mot</label><br /> <br />
                 <input type="text" name="mot" id="mot" autocomplete="off" autofocus>
                 <input type="submit" value="Envoyer">
             </form>
@@ -42,11 +50,12 @@
             </div>
         </div>
         <div id="mot_bonus">
-            <label> Mot Bonus</label> <br />
+            <h2> Mot Bonus</h2> <br />
             <div id="mot_bonus">
 
             </div>
         </div>
+        </>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src=" {% static 'learnword/node_modules/bootstrap/dist/js/bootstrap.js' %}">
         </script>
@@ -54,6 +63,8 @@
 
         </script>
         <script>
+            var n = 0;
+
             function get_session(session_name) {
                 let a = '';
                 let formData = new FormData();
@@ -74,11 +85,7 @@
                             throw new Error('Erreur');
                         }
                     })
-                    .then(result => {
-                        a = result[session_name];
-                        alert(a);
-                    });
-                return a;
+                    .then(result => {});
             }
 
             function set_letter(letter) {
@@ -108,13 +115,28 @@
                             document.getElementById(a).style.background = "";
                             document.getElementById(a).style.color = ""
                         }
+                        let a = document.getElementById("timer-value")
+                        var opt;
+                        for (var i = 0, len = a.options.length; i < len; i++) {
+                            opt = a.options[i];
+                            if (opt.selected === true) {
+                                break;
+                            }
+                        }
                         document.getElementById(letter).style.background = '#0679FC';
                         document.getElementById(letter).style.color = "white";
-                        setTimeout(function () {
-                            var n = get_session('mot_trouve');
-                            //alert(session_name);
-                            alert("Temps écoulé vous avez donné " + n + " mot(s) corrects");
-                        }, 1000 * 40);
+                        var i = parseInt(opt.value);
+                        var time = setInterval(function () {
+                            document.getElementById('decompt').innerText = i.toString();
+                            document.getElementById('rest-timer').max = parseInt(opt.value);
+                            document.getElementById('rest-timer').value = parseInt(opt.value) - i;
+                            if (i <= 0) {
+                                clearInterval(time);
+                                get_session('mot_trouve');
+                                alert("Temps écoulé vous avez donné " + n + " mot(s) corrects");
+                            }
+                            i -= 1;
+                        }, 1000);
                     });
             }
         </script>
@@ -144,6 +166,7 @@
                         .then(result => {
                             var words = document.querySelector("#mot_propose");
                             if (result['correct']) {
+                                n += 1;
                                 words.innerHTML = "<span style=\"color:green\"> " + result['mot'] +
                                     "</span><br />" + words.innerHTML
                             }

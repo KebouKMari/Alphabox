@@ -21,6 +21,7 @@ def modules(request):
 
 def play(request):
     request.session['mot_trouve'] = 0
+    request.session['liste_mot'] = []
     return render(request, 'learnword/paly_test.html', {'alphabet': ascii_lowercase})
 
 
@@ -38,7 +39,11 @@ def validate_word(request):
             if w[0] != request.session["lettre"]:
                 correct = False
             else:
-                request.session['mot_trouve'] += 1
+                if not w in request.session['liste_mot']:
+                    request.session['liste_mot'].append(w)
+                    request.session['mot_trouve'] += 1
+                else:
+                    correct = False
 
         except IndexError:
             correct = False
