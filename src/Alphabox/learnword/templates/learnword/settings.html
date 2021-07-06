@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'learnword/main.css' %}">
+    <title>settings</title>
+</head>
+
+<body>
+    <label for="timer">Timer</label>
+    <input type="number" name="timer" id="timer" min="0" max="120">
+    <div id='contener'>
+        <form action="">
+            <div id="alphabet">
+                {% for letter in alphabet %}
+                <input type="button" value="{{ letter }}" id="{{ letter }}" class="letter"
+                    onclick="set_letter('{{ letter }}')">
+                {% endfor %}
+            </div>
+        </form>
+
+        <div>
+            <form action="" method="POST" id="formmot"> {% csrf_token %}
+                <label for="mot">mot</label><br /> <br />
+                <input type="text" name="mot" id="mot" autocomplete="off" autofocus>
+                <input type="submit" value="Envoyer">
+            </form>
+            <br />
+            <div id="mot_propose">
+            </div>
+        </div>
+    </div>
+    <div class="popup" onclick="myFunction()">Click me!
+        <span class="popuptext" id="myPopup">Popup text...</span>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // When the user clicks on <div>, open the popup
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+    <script>
+        function set_letter(letter) {
+            var l = document.querySelector("#" + letter)
+            let formData = new FormData();
+            formData.append('contenu', l.value);
+            formData.append('nom', 'lettre');
+            let csrfTokenValue = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            const request = new Request('{% url "create_session" %}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': csrfTokenValue
+                }
+            });
+            fetch(request)
+                .then(response => {
+                    if (response.status === 200) {
+                        return response.json();
+                    } else {
+                        throw new Error('Erreur');
+                    }
+                })
+                .then(result => {
+                    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+                    for (let a of alphabet) {
+                        document.getElementById(a).style.background = "";
+                        document.getElementById(a).style.color = ""
+                    }
+                    document.getElementById(letter).style.background = "blue";
+                    document.getElementById(letter).style.color = "white";
+                    setTimeout(function () {
+                        alert("Hello world")
+                    }, 1000 * document.querySelector("#timer").value);
+                });
+        }
+    </script>
+    <script>
+        document.querySelector("#formmot").addEventListener("submit", (event) => {
+            event.preventDefault();
+            let formData = new FormData();
+            formData.append('mot', document.querySelector("#mot").value);
+            let csrfTokenValue = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            const request = new Request('{% url "validateword" %}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': csrfTokenValue
+                }
+            });
+            fetch(request)
+                .then(response => {
+                    if (response.status === 200) {
+                        return response.json();
+                    } else {
+                        throw new Error('Erreur');
+                    }
+                })
+                .then(result => {
+                    var words = document.querySelector("#mot_propose");
+                    if (result['correct']) {
+                        words.innerHTML = "<span style=\"color:green\"> " + result['mot'] +
+                            "</span><br />" + words.innerHTML
+                    }
+
+                    if (!result['correct']) {
+                        words.innerHTML = "<span style=\"color:red\"> " + result['mot'] + "</span><br />" +
+                            words.innerHTML
+                    }
+                    document.querySelector("#mot").value = '';
+                });
+        })
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>

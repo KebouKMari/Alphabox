@@ -1,0 +1,4 @@
+venv/
+src/Alphabox/__pycache__/
+src/learnword/__pycache__/
+src/learnword/migrations/

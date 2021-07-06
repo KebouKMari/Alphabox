@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% load static %}
+	<title>Alphabox</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'learnword/style1.css' %}">
+	<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<div class="area">
+		<ul class="circles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="menu">
+			<ul>
+				<li class="logo"><img src="{% static 'learnword/images/logoCopie.jpg' %}" /></li>
+			</ul>
+		</div>
+
+		<div class="container1">
+			<div class="item zoom">
+				<img src="{% static 'learnword/images/picture.jpg' %}" width="360px" height="350px" />
+				<div class="texte_centrer">
+					<a href="{% url 'play' %}" class="btn learning btn-info btn-lg">
+						<span>APPRENDRE UN NOUVEAU MOT</span>
+					</a>
+				</div>
+
+			</div>
+			<div class="item zoom">
+				<img src="{% static 'learnword/images/pic.jpeg' %}" width="360px" height="350px" />
+				<div class="texte_centrer">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">
+						<span>APPRENDRE LE SENS DES MOTS</span>
+					</button>
+
+				</div>
+			</div>
+			<div class="item zoom">
+				<img src="{% static 'learnword/images/im.jpg' %}" width="360px" height="350px" />
+				<div class="texte_centrer">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3">
+						<span>CONSTRUIRE DES PHRASES</span>
+
+					</button>
+
+
+				</div>
+			</div>
+			<div class="content contexte">
+				<h1 class="display-5">
+					Choisissez un module en cliquant sur l'image
+
+			</div>
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+			</script>
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+				crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+				integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+				crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+				integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+				crossorigin="anonymous"></script>
+
+			<script type="text/javascript" src="{% static 'learnword/main.js' %}"></script>
+
+</body>
+
+</html>

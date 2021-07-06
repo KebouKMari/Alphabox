@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <title>Alphabox</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'learnword/style.css' %}">
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integr>
+
+
+</head>
+
+<body>
+
+    <div class="area">
+        <ul class="circles">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>F</li>
+            <li>E</li>
+            <li>G</li>
+            <li>D</li>
+            <li>P</li>
+            <li>I</li>
+            <li>J</li>
+            <li>H</li>
+            <li>K</li>
+            <li>L</li>
+            <li>M</li>
+            <li>N</li>
+            <li>O</li>
+            <li>P</li>
+            <li>Q</li>
+            <li>R</li>
+            <li>S</li>
+        </ul>
+        <div class="menu">
+            <ul>
+                <li class="logo"><img src="{% static 'learnword/images/logoCopie.jpg' %}" /></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="context">
+        <h1 class="display-5">
+            Joue tout en apprenant de nouvelles langues.<br>
+            <div class="slogan">Lance Toi!<i class="em em-blush" aria-role="presentation"
+                    aria-label="SMILING FACE WITH SMILING EYES">
+                </i></div>
+
+        </h1>
+        <div class="block">
+
+
+            <div class="cta">Choisissez une langue</label></div>
+        </div>
+
+        <form class="form hidden">
+            <ul>
+                <li><a href="{% url 'modules' %}" class="choix"><i class="em em-flag-cp" aria-role="presentation"
+                            aria-label="Clipperton Island Flag"></i></a><br />Francais</li>
+                <li><a href="{% url 'modules' %}" class="choix"><i class="em em-flag-hm" aria-role="presentation"
+                            aria-label="Heard & McDonald Islands Flag" height="30px" width="30px"></i></a><br />Anglais
+                </li>
+                <li><a href="{% url 'modules' %}" class="choix"><i class="em em-flag-be" aria-role="presentation"
+                            aria-label="Belgium Flag"></i></a><br />Allemagne</li>
+                <li><a href="{% url 'modules' %}" class="choix"><i class="em em-flag-ea" aria-role="presentation"
+                            aria-label="Ceuta & Melilla Flag"></i></a><br />Espanol</li>
+            </ul>
+
+        </form>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src=" {% static 'learnword/node_modules/bootstrap/dist/js/bootstrap.js' %}">
+        </script>
+        <script type="text/javascript" src="{% static 'learnword/main.js' %}"></script>
+</body>
+
+</html>

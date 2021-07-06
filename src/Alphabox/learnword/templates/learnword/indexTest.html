@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word</title>
+</head>
+
+<body>
+    <br />
+    <form action="" method="POST" id="formmot"> {% csrf_token %}
+        <label for="mot">mot</label><br /> <br />
+        <input type="text" name="mot" id="mot" autofocus>
+        <input type="submit" value="Envoyer">
+    </form>
+    <br />
+    <div id="mot_propose">
+        {% if var == 'correct' %}
+        <span style="color:green">{{ mot }}</span><br />
+        {% else %}
+        <span style="color:red">{{ mot }}</span><br />
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        document.querySelector("#formmot").addEventListener("submit", (event) => {
+            event.preventDefault();
+            let formData = new FormData();
+            formData.append('mot', document.querySelector("#mot").value);
+            let csrfTokenValue = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            const request = new Request('{% url "validateword" %}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': csrfTokenValue
+                }
+            });
+            fetch(request)
+                .then(response => {
+                    if (response.status === 200) {
+                        return response.json();
+                    } else {
+                        throw new Error('Erreur');
+                    }
+                })
+                .then(result => {
+                    var words = document.querySelector("#mot_propose");
+                    if (result['correct']) {
+                        words.innerHTML = words.innerHTML + "<span style=\"color:green\"> " + result[
+                            'mot'] + "</span><br />"
+                    }
+
+                    if (!result['correct']) {
+                        words.innerHTML = words.innerHTML + "<span style=\"color:red\"> " + result['mot'] +
+                            "</span><br />"
+                    }
+                    document.querySelector("#mot").value = '';
+                });
+        })
+    </script>
+</body>
+
+</html>
